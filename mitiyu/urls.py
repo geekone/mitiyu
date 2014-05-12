@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^guess/',include('guess.urls')),        #竞猜URL
     url(r'^backend/',include('backend.urls')),        #后台管理URL
 
 )
