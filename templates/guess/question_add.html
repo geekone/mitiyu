@@ -1,0 +1,10 @@
+{% extends "guess/layout.html" %}
+{% block content %}
+<div class="row">
+     <form class="form-horizontal" role="form" method="post" action="">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <input type="submit" value="添加问题">
+    </form>
+</div>
+{% endblock %}

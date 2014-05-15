@@ -1,0 +1,23 @@
+{% extends "guess/layout.html" %}
+{% block content %}
+<div class="row">
+<table class="table table-striped">
+<thead>
+<tr>
+<th>#</th>
+<th>标题</th>
+<th>操作</th>
+</tr>
+</thead>
+ <tbody>
+{% for q in questions %}
+ <tr>
+    <td>{{ q.id }}</td>
+    <td>{{ q.title }}</td>
+    <td>DEL | EDIT</td>
+ </tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock %}

@@ -13,5 +13,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^guess/',include('guess.urls')),        #竞猜URL
     url(r'^backend/',include('backend.urls')),        #后台管理URL
+    url(r'^fetch/',include('fetch.urls')),      #抓取URL
 
 )

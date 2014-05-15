@@ -1,3 +1,7 @@
 http://getbootstrap.com
 
 http://www.hao123.com/sports
+
+
+django模板函数
+http://blog.sina.com.cn/s/blog_75e9551f0101az3f.html

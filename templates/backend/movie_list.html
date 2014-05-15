@@ -1,0 +1,24 @@
+{% extends "backend/layout.html" %}
+{% block content %}
+<h4 class="sub-header">视频列表 | <a href="/backend/addmovie">添加视频</a></h4>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
+<tr>
+<th>#</th>
+<th>标题</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+{% for movie in movies %}
+<tr>
+<td>{{ movie.id }}</td>
+<td>{{ movie.title }}</td>
+<td>Del | Edit</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "backend/layout.html" %}
+{% block content %}
+<h4 class="sub-header">添加视频 | <a href="/backend/movies">视频列表</a></h4>
+<div class="table-responsive">
+    <form class="form-horizontal" role="form" method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+         <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">新增</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

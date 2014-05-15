@@ -1,0 +1,32 @@
+{% extends "guess/layout.html" %}
+{% block content %}
+<div class="row">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>比赛ID</th>
+            <th>比赛时间</th>
+            <th>主队ID</th>
+            <th>主队名称</th>
+            <th>客队ID</th>
+            <th>客队名称</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for m in matchs %}
+            <tr>
+                <td>{{ m.id }}</td>
+                <td>{{ m.yp_matchid }}</td>
+                <td>{{ m.yp_t |date:"Y-m-d H:i:s"  }}</td>
+                <td>{{ m.yp_t1d }}</td>
+                <td>{{ m.yp_t1GBn }}</td>
+                <td>{{ m.yp_t2d }}</td>
+                <td>{{ m.yp_t2GBn }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

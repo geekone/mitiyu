@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'guess',
     'backend',
+    'fetch'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -66,7 +67,7 @@ DATABASES = {
     # }
     'default':{
         'ENGINE':'django.db.backends.mysql',
-        'NAME':'mitiyu_dev',
+        'NAME':'mitiyu_db',
         'USER':'root',
         'PASSWORD':'',
         'HOST':'127.0.0.1',
@@ -79,7 +80,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
 LANGUAGE_CODE = 'zh-CN'
-
+# TIME_ZONE = 'Asia/Shanghai'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
