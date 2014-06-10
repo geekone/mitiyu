@@ -48,6 +48,8 @@ def category_add(request):
             cd = form.cleaned_data
             category = Category()
             category.name = cd['name']
+            category.cname = cd['cname']
+            # print request.POST['aname']
             category.save()
             return HttpResponseRedirect("/backend/categories")
     else:
