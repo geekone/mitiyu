@@ -1,6 +1,6 @@
 {% extends "backend/layout.html" %}
 {% block content %}
-<h2 class="sub-header">友情列表 | <a href="/backend/addlink">添加友情链接</a></h2>
+<h4 class="sub-header">友链列表 | <a href="/backend/addlink">添加友链</a> </h4>
 <div class="table-responsive">
 <table class="table table-striped">
 <thead>
@@ -8,43 +8,27 @@
 <th>#</th>
 <th>名称</th>
 <th>中文</th>
+<th>链接</th>
+<th>介绍</th>
 <th>操作</th>
 </tr>
 </thead>
 <tbody>
-
+{%  for link in links %}
 <tr>
-<td><%- category.id %></td>
-<td><%- category.name %></td>
-<td><%- category.cn %></td>
-<td>
-<a href="/admin/editcategory?id=<%-category.id%>">EDIT</a>|
-<a href="/admin/category/<%-category.id%>/delete">DEL</a>
-</td>
+    <td>{{ link.id }}</td>
+    <td>{{ link.link_name }}</td>
+    <td>{{ link.link_url}}</td>
+    <td>{{ link.link_description }}</td>
+    <td>
+{#        <a href="/backend/deletecategory/{{ category.id }}">Del</a> |#}
+        <a href="{% url 'backend.views.link_delete' link.id %}"> DEL</a>
+        |
+        <a href="{% url 'backend.views.link_edit' link.id %}"> EDIT</a>
+    </td>
 </tr>
-
+{% endfor %}
 </tbody>
 </table>
-</div>
-
-<div class="table-responsive">
-    <form class="form-horizontal" role="form" method="post" action="/admin/category/create">
-        <div class="form-group">
-            <label for="name" class="col-sm-1 control-label">名字:</label>
-            <div class="col-sm-11">
-                <input type="text" class="form-control" id="name" name="name" placeholder="category name">
-            </div>
-           
-            <label for="cn" class="col-sm-1 control-label">中文:</label>
-            <div class="col-sm-11">
-                <input type="text" class="form-control" id="cn" name="cn" placeholder="cn">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">新增</button>
-            </div>
-        </div>
-    </form>
 </div>
 {% endblock %}

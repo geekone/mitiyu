@@ -60,28 +60,28 @@ WSGI_APPLICATION = 'mitiyu.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     '
-    # ': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-    'default':{
-        'ENGINE':'django.db.backends.mysql',
-        'NAME':'mitiyu_db',
-        'USER':'root',
-        'PASSWORD':'',
-        'HOST':'127.0.0.1',
-        'PORT':'3306',
-        'DEFAULT_CHARSET':'utf-8'
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    # 'default':{
+    #     'ENGINE':'django.db.backends.mysql',
+    #     'NAME':'mitiyu_db',
+    #     'USER':'root',
+    #     'PASSWORD':'',
+    #     'HOST':'127.0.0.1',
+    #     'PORT':'3306',
+    #     'DEFAULT_CHARSET':'utf-8'
+    # }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'zh-CN'
-# TIME_ZONE = 'Asia/Shanghai'
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'zh_cn'
+
+TIME_ZONE = 'Asia/Shanghai'
+# TIME_ZONE = 'UTC'
 
 USE_I18N = True
 

@@ -7,6 +7,7 @@
 <tr>
 <th>#</th>
 <th>名称</th>
+<th>中文</th>
 <th>操作</th>
 </tr>
 </thead>
@@ -15,7 +16,13 @@
 <tr>
     <td>{{ category.id }}</td>
     <td>{{ category.name }}</td>
-    <td>Del | Edit</td>
+    <td>{{ category.cname}}</td>
+    <td>
+{#        <a href="/backend/deletecategory/{{ category.id }}">Del</a> |#}
+        <a href="{% url 'backend.views.category_delete' category.id %}"> DEL</a>
+        |
+        <a href="{% url 'backend.views.category_edit' category.id %}"> EDIT</a>
+    </td>
 </tr>
 {% endfor %}
 </tbody>

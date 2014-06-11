@@ -35,3 +35,34 @@ http://blog.csdn.net/feng88724/article/details/7262514
 
 如果在mitiyu.urls 里面使用:url(r'^accounts/login/$', 'django.contrib.auth.views.login'),使用默认的templates 默认跳转到“templates\registration\login.html”这个模板
 (r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'myapp/login.html'}),
+
+
+
+
+
+
+时区
+1、
+settings.py 设置成：
+
+LANGUAGE_CODE = 'zh_cn'
+
+TIME_ZONE = 'Asia/Shanghai'
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+
+
+
+2、
+那么，存入数据库的是 timezone aware 的时间类型（时区默认是UTC）
+如果要显示是，要生成当地的时区（比如 UTC+8）
+
+import django.utils.timezone as tz
+print tz.localtime(at).strftime('%Y-%m-%d %H:%m')
+
+
+

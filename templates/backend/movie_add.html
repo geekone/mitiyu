@@ -1,15 +1,44 @@
 {% extends "backend/layout.html" %}
 {% block content %}
 <h4 class="sub-header">添加视频 | <a href="/backend/movies">视频列表</a></h4>
-<div class="table-responsive">
-    <form class="form-horizontal" role="form" method="post" action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">新增</button>
-            </div>
-        </div>
-    </form>
+<div>
+<form class="form-horizontal" role="form" method="post">
+    {% csrf_token %}
+	<div class="form-group">
+		<label for="title" class="col-md-1 control-label">标题:</label>
+		<div class="col-md-8">
+			<input type="text" class="form-control" id="title" name="title">
+		</div>
+		<div class="col-md-3">
+			<span class="text-danger"></span>
+		</div>
+	</div>
+    <div class="form-group">
+		<label for="categoryid" class="col-md-1 control-label">分类:</label>
+		<div class="col-md-8">
+			<select name="categoryid" id="categoryid" class="form-control">
+				{% for category in categories %}
+					<option value="{{category.id}}">{{category.cname}}</option>
+				{% endfor %}
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="content" class="col-md-1 control-label">内容:</label>
+		<div class="col-md-8">
+			<input type="text" class="form-control" id="content" name="content">
+		</div>
+		<div class="col-md-3">
+			<span class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<button type="submit" class="btn btn-primary">新增</button>
+			<button type="button" class="btn btn-default" onclick="javascript:history.back();">取消</button>
+		</div>
+	</div>
+</form>
 </div>
 {% endblock %}
