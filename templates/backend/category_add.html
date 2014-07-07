@@ -3,6 +3,7 @@
 <h4 class="sub-header">添加分类 | <a href="/backend/categories">分类列表</a></h4>
 <div class="table-responsive">
 <form class="form-horizontal" role="form" method="post">
+<<<<<<< HEAD
      {% csrf_token %}
 	<div class="form-group">
 		<label for="name" class="col-sm-1 control-label">Name:</label>
@@ -11,17 +12,37 @@
 		</div>
 		<div class="col-sm-3">
 			<span class="text-danger">{{ form.name.errors}}</span>
+=======
+      {% csrf_token %}
+	<div class="form-group">
+		<label for="name" class="col-sm-1 control-label">英文:</label>
+		<div class="col-sm-8">
+            {{ form.name }}
+		</div>
+		<div class="col-sm-3">
+			<span class="text-danger"></span>
+>>>>>>> 1480447b2db88e97eb57fa5670dfe28f152e90d7
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="cname" class="col-sm-1 control-label">中文:</label>
 		<div class="col-sm-8">
+<<<<<<< HEAD
 			{{ form.cname }}
 		</div>
 		<div class="col-sm-3">
 			<span class="text-danger">{{ form.cname.errors}}</span>
 		</div>
 	</div>
+=======
+		    {{ form.cname }}
+		</div>
+		<div class="col-sm-3">
+			<span class="text-danger"></span>
+		</div>
+	</div>
+
+>>>>>>> 1480447b2db88e97eb57fa5670dfe28f152e90d7
 	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-10">
 			<button type="submit" class="btn btn-primary">新增</button>

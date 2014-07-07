@@ -16,8 +16,18 @@
 <tr>
     <td>{{ category.id }}</td>
     <td>{{ category.name }}</td>
+<<<<<<< HEAD
     <td>{{ category.cname }}</td>
     <td>Del | Edit</td>
+=======
+    <td>{{ category.cname}}</td>
+    <td>
+{#        <a href="/backend/deletecategory/{{ category.id }}">Del</a> |#}
+        <a href="{% url 'backend.views.category_delete' category.id %}"> DEL</a>
+        |
+        <a href="{% url 'backend.views.category_edit' category.id %}"> EDIT</a>
+    </td>
+>>>>>>> 1480447b2db88e97eb57fa5670dfe28f152e90d7
 </tr>
 {% endfor %}
 </tbody>

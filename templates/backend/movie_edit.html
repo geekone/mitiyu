@@ -1,13 +1,14 @@
 {% extends "backend/layout.html" %}
 {% block content %}
-<h4 class="sub-header">添加文章 | <a href="/backend/articles">文章列表</a></h4>
+<h4 class="sub-header">修改视频 | <a href="/backend/articles">视频列表</a></h4>
 <div>
 <form class="form-horizontal" role="form" method="post">
     {% csrf_token %}
+    <input type="hidden" id="movieid" name="movieid" value="{{ movie.id }}">
 	<div class="form-group">
 		<label for="title" class="col-md-1 control-label">标题:</label>
 		<div class="col-md-8">
-			<input type="text" class="form-control" id="title" name="title">
+			<input type="text" class="form-control" id="title" name="title" value="{{ movie.title }}">
 		</div>
 		<div class="col-md-3">
 			<span class="text-danger"></span>
@@ -18,7 +19,7 @@
 		<div class="col-md-8">
 			<select name="categoryid" id="categoryid" class="form-control">
 				{% for category in categories %}
-					<option value="{{category.id}}">{{category.cname}}</option>
+					<option value="{{category.id}}" {% if category.id == movie.category.id%}selected{% endif %} >{{category.cname}}</option>
 				{% endfor %}
 			</select>
 		</div>
@@ -26,7 +27,7 @@
 	<div class="form-group">
 		<label for="content" class="col-md-1 control-label">内容:</label>
 		<div class="col-md-8">
-			<input type="text" class="form-control" id="content" name="content">
+			<input type="text" class="form-control" id="content" name="content" value="{{ movie.content }}">
 		</div>
 		<div class="col-md-3">
 			<span class="text-danger"></span>
@@ -35,7 +36,7 @@
 
 	<div class="form-group">
 		<div class="col-md-offset-2 col-md-10">
-			<button type="submit" class="btn btn-primary">新增</button>
+			<button type="submit" class="btn btn-primary">修改</button>
 			<button type="button" class="btn btn-default" onclick="javascript:history.back();">取消</button>
 		</div>
 	</div>

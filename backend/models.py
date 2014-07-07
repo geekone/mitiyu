@@ -7,8 +7,8 @@ class Link(models.Model):
     link_id = models.AutoField(primary_key=True)               #自增链接id
     link_url = models.CharField(max_length=255)  #链接url
     link_name = models.CharField(max_length=255)    #链接名
-    link_image  = models.CharField(max_length=255)  #链接图象
-    link_target = models.CharField(max_length=25)   #键接打开方式
+    # link_image  = models.CharField(max_length=255)  #链接图象
+    # link_target = models.CharField(max_length=25)   #键接打开方式
     link_description  = models.CharField(max_length=255)  #说明
     # link_visible = models.CharField(max_length=20)    #是否可见
     # link_owner = models.IntegerField()              #链接用户ID
@@ -28,8 +28,13 @@ class Link(models.Model):
 #分类模型
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
+<<<<<<< HEAD
     name = models.CharField(max_length=50)
     cname = models.CharField(max_length=50)
+=======
+    name = models.CharField(max_length=50)      #英文
+    cname = models.CharField(max_length=50)     #中文
+>>>>>>> 1480447b2db88e97eb57fa5670dfe28f152e90d7
 
     class Meta:
         db_table = "t_category"
@@ -42,7 +47,10 @@ class Movie(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)            #视频标题
     content = models.TextField()                        #视频内容
-    created = models.DateTimeField()
+    category = models.ForeignKey(Category,related_name='category_movie')
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
     class Meta:
         db_table="t_movie"
 
@@ -54,9 +62,10 @@ class Article(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)        #文章标题
     content = models.TextField()                    #文章内容
-    created = models.DateTimeField()                #发布时间
-    # created = models.DateTimeField('添加时间', default=datetime.now())
-    # updated = models.DateTimeField('修改时间',auto_now=True,default=datetime.now())
+    category = models.ForeignKey(Category,related_name='category_article')
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
     class Meta:
         db_table = "t_article"
 
