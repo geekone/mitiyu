@@ -13,11 +13,7 @@ class MovieForm(forms.Form):
 
 #文章的Form
 class ArticleForm(forms.Form):
-<<<<<<< HEAD
     title = forms.CharField(label=u'标题',widget=forms.TextInput(attrs={'class':'form-control'}))
-=======
-    title = forms.CharField(label=u'标题')
->>>>>>> 1480447b2db88e97eb57fa5670dfe28f152e90d7
     # content = forms.CharField(label=u'内容',widget=forms.Textarea)
 
 #友情链接Form

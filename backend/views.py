@@ -49,10 +49,6 @@ def category_add(request):
             category = Category()
             category.name = cd['name']
             category.cname = cd['cname']
-<<<<<<< HEAD
-            # print request.POST['aname']
-=======
->>>>>>> 1480447b2db88e97eb57fa5670dfe28f152e90d7
             category.save()
             return HttpResponseRedirect("/backend/categories")
     else:

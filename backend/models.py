@@ -28,13 +28,8 @@ class Link(models.Model):
 #分类模型
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
-<<<<<<< HEAD
-    name = models.CharField(max_length=50)
-    cname = models.CharField(max_length=50)
-=======
     name = models.CharField(max_length=50)      #英文
     cname = models.CharField(max_length=50)     #中文
->>>>>>> 1480447b2db88e97eb57fa5670dfe28f152e90d7
 
     class Meta:
         db_table = "t_category"
