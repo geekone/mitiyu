@@ -57,3 +57,5 @@ docs/_build/
 .idea/*
 win.sublime-project
 win.sublime-workspace
+ub.sublime-project
+ub.sublime-workspace
